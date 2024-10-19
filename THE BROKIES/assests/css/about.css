@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  text-decoration: none;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #cd1002;
+    color: #fff;
+}
+
+/* about us */
+.about-container {
+    background-color: #fff;
+    color: #cd1002;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    gap: 8rem;
+  
+    padding: 2rem 8rem 2rem 8rem;
+  
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    /* Adjust max-width as needed */
+    border-radius: 10px;
+  }
+  
+  .about-content {
+    max-width: 600px;
+    /* Adjust as needed */
+    margin-left: 20px;
+    height: 25rem;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .learn-more-btn {
+    display: inline-block;
+    background-color: #ED1C24;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #c4161e;
+  }
+  
+  .social-media {
+    margin-top: 20px;
+  }
+  
+  .social-media a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-media img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 1300px) {
+    .about-container {
+      margin: 0;
+      padding: 0;
+  
+    }
+  
+    .about-image {
+      margin-left: 8rem;
+    }
+  
+    .about-content {
+      margin-top: 4rem;
+      margin-right: 4rem;
+    }
+  
+  }
+  
+  
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+  
+      padding: 0;
+      gap: 10px;
+  
+    }
+  
+    .about-image {
+      margin-bottom: 20px;
+      margin: 0;
+      padding: 10px;
+    }
+  
+    .about-content {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+  
+    }
+  
+    .social-media {
+      margin-top: 15px;
+    }
+  
+    .social-media a {
+      margin-right: 5px;
+    }
+  
+    .social-media img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
+  
+  @media (max-width: 400px) {
+    .about-content {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      margin-bottom: 3rem;
+      padding: 10px;
+      padding-bottom: 20px;
+      gap: 10px;
+  
+    }
+  
+    .about-content p {
+      font-size: 0.8rem;
+    }
+  
+  }
+
+
+
+
+
+
+
+
+  .motive-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cd1002;
+    padding: 30px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap; /* Ensures content and image remain side-by-side */
+}
+
+.motive-content {
+    margin: 0 7rem;
+    max-width: 40%;
+}
+
+.motive-content h2 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.motive-content h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.motive-content h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.motive-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.motive-image {
+    max-width: 40%;
+    margin-right: 8rem;
+}
+
+.motive-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Design for Tablets and iPads */
+@media screen and (max-width: 1024px) {
+    .motive-section {
+        flex-wrap: wrap; /* Stacks elements on smaller screens */
+        padding: 20px;
+        justify-content: center; /* Centers content on smaller screens */
+    }
+
+    .motive-content {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .motive-image {
+        max-width: 80%;
+        margin: 20px auto 0;
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .motive-content h1 {
+        font-size: 2rem;
+    }
+
+    .motive-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .motive-content p {
+        font-size: 16px;
+    }
+
+    .motive-image {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .motive-section {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+  
+/* Base styling for larger screens */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+
+}
+
+
+
+.team-member {
+    background-color: #b40808;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    /* Margin on both sides */
+}
+
+.member-photo {
+    position: relative;
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.social-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #cd0505;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.social-icons a {
+    display: block;
+    width: 30px;
+    height: 24px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1); /* Inverts color to white for better visibility on red background */
+}
+
+.member-info {
+    padding: 10px 0;
+}
+
+.member-name {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.member-position {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #b5b5b5;
+}
+
+.member-description {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.portfolio-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1em;
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive design for tablets (up to 768px wide) */
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        gap: 15px; /* Adjust gap to fit better on tablets */
+    }
+
+    .team-member {
+        margin: 0 3.5rem; /* Adjust margin for tablets */
+        padding: 15px; /* Adjust padding for tablets */
+    }
+
+    .member-name {
+        font-size: 1.2em;
+    }
+
+    .member-description {
+        font-size: 0.85em;
+    }
+}
+
+/* Responsive design for mobile devices (up to 480px wide) */
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr; /* One card per row */
+        gap: 10px; /* Adjust gap for mobile devices */
+    }
+
+    .team-member {
+        margin: 0 1rem; /* Adjust margin for mobile devices */
+        padding: 10px; /* Adjust padding for mobile devices */
+    }
+
+    .member-name {
+        font-size: 1.1em;
+    }
+
+    .member-description {
+        font-size: 0.8em;
+    }
+
+    .portfolio-link {
+        font-size: 0.9em;
+    }
+}
