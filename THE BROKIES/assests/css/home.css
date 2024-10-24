@@ -8,6 +8,8 @@
   text-decoration: none;
 }
 
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -153,6 +155,10 @@ nav {
 
 
 
+
+
+
+
 hr {
   width: 26rem;
   height: 5px;
@@ -162,49 +168,48 @@ hr {
   border-radius: 3px;
 }
 
-
-
 .container {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  /* Align items horizontally */
-  justify-content: center;
-  align-items: center;
-  margin: 0 7rem 3rem 7rem;
-  /* Margin on left and right */
-  /* Adjust padding if needed */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
 }
 
 .content {
-  text-align: left;
-  /* Align text to the left */
+  text-align: left; /* Align text to the left */
   margin-left: 1rem;
   margin-right: 20px;
   display: flex;
   margin-top: 4rem;
-  width: 54%;
-  /* Space between content and image */
+  width: 54%; /* Space between content and image */
 }
 
 .content h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Reduced margin for spacing */
+  padding: 0; /* Remove padding */
 }
 
 .content p {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Reduced margin for spacing */
+  padding: 0; /* Remove padding */
 }
 
 .btn {
   background-color: #ffffff;
   color: #ff0000;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Original padding */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2rem;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Added margin for spacing */
 }
 
 .btn:hover {
@@ -213,69 +218,70 @@ hr {
 }
 
 .image-container {
-  flex: 1;
-  /* Allow image container to take remaining space */
+  flex: 1; /* Allow image container to take remaining space */
   display: flex;
-  justify-content: center;
-  /* Center image horizontally */
-  align-items: center;
-  /* Center image vertically */
-  margin: 0;
-  margin-top: 8rem;
-  margin-bottom: 1rem;
-  /* Remove margins */
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  margin: 0; /* Remove all margins */
+  padding: 0; /* Remove all padding */
 }
 
 .image-container img {
-
-  width: 100%;
-  /* Make image responsive to container width */
-  height: auto;
-  /* Maintain aspect ratio */
-  max-width: 88rem;
-  /* Maximum width of image */
-  max-height: 445px;
-  /* Maximum height of image */
-  margin: 0;
-  /* Remove margins */
+  width: 100%; /* Make image responsive to container width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 88rem; /* Maximum width of image */
+  max-height: 445px; /* Maximum height of image */
+  margin: 0; /* Remove margins */
 }
-
 
 @media (max-width: 450px) {
   .container {
-    flex-direction: column;
-    /* Stack content and image vertically on small screens */
-    margin: 0;
-    /* Remove margins */
-    padding: 0;
-    /* Adjust padding if needed */
+    flex-direction: column; /* Stack content and image vertically on small screens */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Adjust padding if needed */
   }
 
   .content {
     width: 100%;
-    margin: 0;
-    /* Remove margin on small screens */
-    text-align: center;
-    /* Center text on small screens */
+    margin: 0; /* Remove margin on small screens */
+    text-align: center; /* Center text on small screens */
   }
 
   .content h1 {
-    font-size: 2rem;
-
+    font-size: 1.8rem;
+    margin-bottom: 10px; /* Added gap below h1 */
+    padding: 0; /* Ensure no padding */
   }
 
-}
+  .content p {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Added gap below p */
+    padding: 0; /* Ensure no padding */
+  }
 
+  .btn {
+    padding: 5px 10px; /* Adjust button size for mobile */
+    font-size: 1rem; /* Adjust font size for mobile */
+    margin-bottom: 10px; /* Added gap below button */
+  }
+
+  .image-container {
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+  }
+
+  .image-container img {
+    margin-top: 0; /* No margin on top */
+    margin-bottom: 0; /* No margin below image */
+  }
+}
 
 @media (max-width: 1100px) {
   .container {
-    flex-direction: column;
-    /* Stack content and image vertically on small screens */
+    flex-direction: column; /* Stack content and image vertically on small screens */
     margin: 0;
-    margin-top: 4rem;
-    /* Remove margins */
-    padding: 10px;
-    /* Adjust padding if needed */
+    margin-top: 4rem; /* Remove margins */
+    padding: 10px; /* Adjust padding if needed */
   }
 
   hr {
@@ -286,138 +292,76 @@ hr {
   .content {
     width: 100%;
     margin: 0;
-    padding: 10px;
-    /* Remove margin on small screens */
-    text-align: center;
-    /* Center text on small screens */
+    padding: 10px; /* Remove margin on small screens */
+    text-align: center; /* Center text on small screens */
   }
 
-
-
   .image-container {
-    margin-top: 20px;
-    /* Add margin between content and image on small screens */
+     /* Add margin between content and image on small screens */
+    margin-bottom: 0; /* No margin below image */
   }
 
   .image-container img {
-    height: auto;
-    /* Maintain aspect ratio */
-    max-width: 100%;
-    /* Ensure image fits within container on smaller screens */
-    max-height: 550px;
-    /* Adjust height on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure image fits within container on smaller screens */
+    max-height: 400px;
+    margin-top: 3rem; /* No margin on top */
+    margin-bottom: 4rem; /* No margin below image */
   }
 }
 
 
-
-
-
-
-
-
-
-.logo-container {
-  background-color: black;
-  color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-
-  padding-left: 9rem;
-  padding-right: 9rem;
-}
-
-
-.logo-container1 {
-  background-color: #000000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-
-}
-
-
-.logo-item {
-  width: 100px;
-  /* Fixed width for each logo */
-  height: auto;
-  /* Maintain aspect ratio */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo-item img {
-  max-width: 100%;
-  max-height: 60px;
-  /* Adjust height of logo */
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .logo-container {
-    margin: 0;
-    padding: 30px;
-  }
-
-  .logo-item {
-    width: 80px;
-    /* Smaller size for smaller screens */
-    padding: 5px;
-  }
-
-  .logo-item img {
-    max-height: 50px;
-  }
-}
 
 /* about us */
+.about {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+}
+
 .about-container {
   background-color: #fff;
   color: #cd1002;
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
 
-  gap: 8rem;
-
-  padding: 2rem 8rem 2rem 8rem;
-
+.about-image {
+  flex: 1; /* Allow the image to grow and take up available space */
+  margin-top: 4rem;
 }
 
 .about-image img {
   width: 100%;
   height: auto;
-  max-width: 500px;
-  /* Adjust max-width as needed */
+  max-width: 500px; /* Keep the max-width of the image */
   border-radius: 10px;
 }
 
 .about-content {
-  max-width: 600px;
-  /* Adjust as needed */
-  margin-left: 20px;
-  height: 25rem;
+  flex: 1; /* Set equal flex to content */
+  margin-top: 4rem;
+  max-width: 500px; /* Keep the same max-width for content as the image */
 }
 
 .about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-content h3 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .about-content p {
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   line-height: 1.6;
 }
 
@@ -431,6 +375,7 @@ hr {
   text-decoration: none;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .learn-more-btn:hover {
@@ -454,149 +399,143 @@ hr {
 
 @media (max-width: 1300px) {
   .about-container {
-    margin: 0;
-    padding: 0;
-
+      margin: 0;
+      padding: 0;
   }
 
   .about-image {
-    margin-left: 8rem;
+      padding-left: 8rem;
+      max-width: 400px;
   }
 
   .about-content {
-    margin-top: 4rem;
-    margin-right: 4rem;
+      margin-top: 4rem;
+      margin-right: 4rem;
   }
-
 }
-
 
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-
-    padding: 0;
-    gap: 10px;
-
+      flex-direction: column; /* Stack content and image vertically on smaller screens */
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      gap: 10px;
   }
 
   .about-image {
-    margin-bottom: 20px;
-    margin: 0;
-    padding: 10px;
+      margin-bottom: 20px;
+      margin: 0;
+      padding: 10px;
+      max-width: 100%; /* Ensure image does not exceed container width */
   }
 
   .about-content {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      max-width: 100%; /* Ensure content fits within container */
   }
 
   .social-media {
-    margin-top: 15px;
+      margin-top: 15px;
   }
 
   .social-media a {
-    margin-right: 5px;
+      margin-right: 5px;
   }
 
   .social-media img {
-    width: 25px;
-    height: 25px;
+      width: 25px;
+      height: 25px;
   }
 }
-
 
 @media (max-width: 400px) {
   .about-content {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    margin-bottom: 3rem;
-    padding: 10px;
-    padding-bottom: 20px;
-    gap: 10px;
-
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      margin-bottom: 3rem;
+      padding: 10px;
+      padding-bottom: 20px;
+      gap: 10px;
   }
 
   .about-content p {
-    font-size: 0.8rem;
+      font-size: 0.8rem;
   }
-
 }
 
-/* services */
+
+
+
+
+
+/* Services Section */
 .services-section {
-  padding: 60px 150px;
-  margin-bottom: 3rem;
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
 }
 
 .services-title {
-  font-size: 36px;
+  font-size: 3rem;
   text-transform: uppercase;
   margin-bottom: 10px;
   font-weight: bold;
-  text-align: left;
+  text-align: left; /* Title aligned to the left */
 }
 
 .services-subtitle {
   font-size: 16px;
   margin-bottom: 40px;
   max-width: 700px;
-  text-align: left;
+  text-align: left; /* Subtitle aligned to the left */
 }
 
 .services-container {
   display: flex;
-  gap: 90px;
+  gap: 30px; /* Reduced gap for better responsiveness */
   justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10rem; /* Allow wrapping of cards */
 }
 
 .service-card {
   padding: 20px;
-
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  /* Text color for better readability */
-  min-height: 18rem;
-  /* Ensure a minimum height for cards */
+  min-height: 18rem; /* Ensure a minimum height for cards */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-decoration: none;
-  /* Remove underline from text links */
-  width: 300px;
-  /* Fixed width for larger screens */
+  text-decoration: none; /* Remove underline from text links */
+  width: calc(33.33% - 20px); /* 3 cards per row with some spacing */
+  max-width: 300px; /* Fixed max width for larger screens */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add some shadow */
 }
 
 .service-card:nth-child(1) {
-  background-color: #ED1C24;
-  /* Red background */
+  background-color: #ED1C24; /* Red background */
   color: #fff;
 }
 
 .service-card:nth-child(2) {
-  background-color: #FFFFFF;
-  /* White background */
-  color: #000000;
-  /* Text color for white background */
+  background-color: #FFFFFF; /* White background */
+  color: #000000; /* Text color for white background */
 }
 
 .service-card:nth-child(3) {
-  background-color: #000000;
-  /* Black background */
-  color: #FFFFFF;
-  /* Text color for black background */
+  background-color: #000000; /* Black background */
+  color: #FFFFFF; /* Text color for black background */
 }
 
 .service-card img {
-  width: 50%;
-  height: 6rem;
+  width: 80%; /* Increased image width for better visibility */
+  height: auto; /* Let the height adjust according to the width */
   object-fit: cover;
   display: block;
   margin: 0 auto 1rem;
@@ -619,17 +558,72 @@ hr {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-container {
+    gap: 20px; /* Adjusted gap for tablets */
+  }
+
+  .service-card {
+    width: calc(50% - 20px); /* 2 cards per row on tablets */
+    max-width: none; /* Remove fixed max-width for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    gap: 15px; /* Further reduce gap for mobile */
+  }
+
+  .service-card {
+    width: calc(100% - 15px); /* Full width for mobile */
+    max-width: none; /* Remove fixed max-width for mobile */
+  }
+
+  .service-card img {
+    width: 100%; /* Full width images on mobile */
+  }
+
+  .services-title {
+    font-size: 2rem; /* Smaller title font size for mobile */
+  }
+
+  .services-subtitle {
+    font-size: 14px; /* Smaller subtitle font size for mobile */
+  }
+
+  .service-card h3 {
+    font-size: 20px; /* Smaller card title font size for mobile */
+  }
+
+  .service-card p {
+    font-size: 12px; /* Smaller text for mobile */
+  }
+}
+
+
+
+.collab {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #04131b;
+}
+
 .collab-section {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  background-color: #04131B;
-  padding: 60px 130px;
-  text-align: left;
+  align-items: stretch; /* Ensure both content and image are the same height */
 }
 
 .collab-image {
-  flex: 0 0 45%;
+  flex: 1 1 45%; /* Flex-grow equally with content */
+  display: flex;
+  align-items: center; /* Center image vertically */
 }
 
 .collab-image img {
@@ -639,36 +633,41 @@ hr {
 }
 
 .collab-content {
-  flex: 0 0 50%;
+  flex: 1 1 45%; /* Flex-grow equally with image */
+  padding: 40px; /* Added padding to balance the content with image size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically align content */
 }
 
 .collab-content h1 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-transform: uppercase;
 }
 
 .collab-content h1 span {
   color: #ED1C24;
+  margin-bottom: 30px;
 }
 
 .collab-content p {
   font-size: 14px;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .collab-button {
   background-color: #ED1C24;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 8px 16px; /* Adjusted padding for smaller button size */
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px; /* Reduced font size for the button */
   cursor: pointer;
-  text-decoration: none;
-  /* Remove underline from text links */
+  text-decoration: none; /* Remove underline from text links */
+  align-self: flex-start; /* Align button to the start of the flex container */
 }
 
 .collab-button:hover {
@@ -677,109 +676,71 @@ hr {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .services-section {
-    padding: 60px 50px;
-    /* Adjust padding for tablets */
-  }
-
-  .services-container {
-    flex-direction: column;
-    /* Stack cards vertically on tablets */
-    align-items: center;
-    /* Center align cards */
-  }
-
-  .service-card {
-    width: 90%;
-    /* Full width with some margin on tablets */
-    max-width: none;
-    /* Remove fixed max-width for tablets */
-  }
-
   .collab-section {
     padding: 60px 20px;
-    /* Adjust padding for tablets */
     flex-direction: column;
-    /* Stack image and text vertically */
     text-align: center;
-    /* Center align text */
+    align-items: center; /* Center align both content and image */
   }
 
   .collab-image {
     margin-bottom: 20px;
-    /* Margin below image */
-    flex: none;
-    /* No flex grow/shrink for image */
+    flex: none; /* Remove flex-grow/shrink */
   }
 
   .collab-content {
     flex: none;
-    /* No flex grow/shrink for content */
     max-width: 100%;
-    /* Full width on tablets */
   }
 }
 
 @media (max-width: 768px) {
-  .services-section {
-    padding: 30px 20px;
-
-    /* Adjust padding for mobile */
-  }
-
-  .services-title {
-    font-size: 28px;
-    /* Smaller title font size for mobile */
-  }
-
-  .services-subtitle {
-    font-size: 14px;
-    /* Smaller subtitle font size for mobile */
-  }
-
-  .service-card {
-
-    width: 100%;
-    /* Full width for mobile */
-    max-width: none;
-    /* Remove fixed max-width for mobile */
-    margin-bottom: 20px;
-    /* Margin between cards */
-  }
-
   .collab-section {
-    padding: 30px 15px;
-    /* Adjust padding for mobile */
+    padding: 30px 20px;
     flex-direction: column;
-    /* Stack image and text vertically */
     text-align: center;
-    /* Center align text */
+    align-items: center; /* Center align both content and image */
   }
 
-  .collab-image {
+  .collab-image,
+  .collab-content {
+    width: 100%;
+    max-width: none; /* Ensure full width */
     margin-bottom: 20px;
-    /* Margin below image */
-    flex: none;
-    /* No flex grow/shrink for image */
   }
 
   .collab-content {
-    flex: none;
-    /* No flex grow/shrink for content */
-    max-width: 100%;
-    /* Full width on mobile */
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .collab-content h1 {
+    font-size: 28px;
+  }
+
+  .collab-content p {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 400px) {
-  .services-container {
-    gap: 20px;
+  .collab-section {
+    padding: 30px 15px;
+    flex-direction: column;
+  }
 
-    /* Adjust padding for mobile */
+  .collab-content h1 {
+    font-size: 24px;
+  }
+
+  .collab-content {
+    padding: 15px; /* Further reduced padding for small mobile devices */
+  }
+
+  .collab-button {
+    font-size: 14px; /* Smaller font size for mobile */
+    padding: 6px 12px; /* Further reduced padding for a smaller button */
   }
 }
-
-
 
 
 
@@ -793,7 +754,7 @@ footer {
 }
 
 footer .content3 {
-  max-width: 1350px;
+  max-width: 88rem;
   margin: auto;
   padding: 20px;
   display: flex;
@@ -938,6 +899,8 @@ footer a:hover {
 }
 
 
+
+
 #despacito {
   font-size: 4rem;
   color: #c80000;
@@ -1080,11 +1043,18 @@ footer a:hover {
 }
 
 
+
+
+
+
 .blogcon {
-  width: 100%;
-  margin: 0 auto;
+  max-width: 88rem;
+  margin: auto;
   padding: 20px;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ 
 }
 
 .title {
@@ -1097,15 +1067,17 @@ footer a:hover {
 }
 
 .title p {
-  font-size: 1.2em;
+  font-size: 1.2em; /* Original padding */
+  margin: 0; /* Ensure margin is 0 */
 }
 
 .content2 {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  
-  margin: 0 7rem 0 7rem;
-  margin-top: 30px;
 }
 
 .blog-section,
@@ -1206,13 +1178,19 @@ footer a:hover {
   font-weight: bold;
 }
 
+/* Responsive styles */
 @media screen and (max-width: 768px) {
   .content2 {
     flex-direction: column;
     margin: 0;
     padding: 0;
   }
-
+  
+  .title p {
+    margin: 0; /* Ensure margin is 0 for mobile */
+    padding-bottom: 10px; /* Remove padding on mobile */
+  }
+  
   .blog-section,
   .right-section {
     width: 100%;
@@ -1224,6 +1202,10 @@ footer a:hover {
 }
 
 
+
+
+
+
 .contact-section {
   background-color: #e3e9ef;
   padding: 40px 8px;
@@ -1233,7 +1215,7 @@ footer a:hover {
 
 .contact-section h1 {
   font-size: 36px;
-  color: #e74c3c;
+  color: #cd1002;
   margin-bottom: 10px;
   text-align: left;
   /* Move title to the left */
@@ -1249,11 +1231,12 @@ footer a:hover {
 }
 
 .contact-container {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .contact-info {
@@ -1317,7 +1300,7 @@ footer a:hover {
 }
 
 .contact-form form button {
-  background-color: #e74c3c;
+  background-color: #cd1002;
   color: white;
   padding: 10px;
   border: none;
@@ -1327,7 +1310,7 @@ footer a:hover {
 }
 
 .contact-form form button:hover {
-  background-color: #c0392b;
+  background-color: #cd1002;
 }
 
 @media (max-width: 768px) {
