@@ -13,137 +13,284 @@ body {
     color: #fff;
 }
 
-/* about us */
-.about-container {
-    background-color: #fff;
-    color: #cd1002;
-    display: flex;
-    flex-direction: row;
+/* General navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #cd1002;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.nav-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Shadow effect */
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 20px;
+  display: block;
+}
+
+.nav-links a:focus,
+.nav-links a:hover {
+  background-color: #a80707;
+  /* Adds a hover and focus effect for better visual feedback */
+  color: #fff;
+}
+
+/* Burger Menu Styles */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: #cc1f1f;
+    flex-direction: column;
     align-items: center;
-  
-    gap: 8rem;
-  
-    padding: 2rem 8rem 2rem 8rem;
-  
-  }
-  
-  .about-image img {
     width: 100%;
-    height: auto;
-    max-width: 500px;
-    /* Adjust max-width as needed */
-    border-radius: 10px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    line-height: 5rem;
+    padding: 2rem;
   }
-  
-  .about-content {
-    max-width: 600px;
-    /* Adjust as needed */
-    margin-left: 20px;
-    height: 25rem;
+
+  .nav-links li {
+    opacity: 0;
+    width: 100%;
+    text-align: center;
   }
-  
-  .about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+
+  .nav-links.nav-active {
+    transform: translateX(0);
   }
-  
-  .about-content p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
+
+  .nav-links.nav-active li {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
   }
-  
-  .learn-more-btn {
-    display: inline-block;
-    background-color: #ED1C24;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+
+  .burger {
+    display: block;
   }
-  
-  .learn-more-btn:hover {
-    background-color: #c4161e;
+
+  /* Burger Animation */
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
-  .social-media {
-    margin-top: 20px;
+
+  .toggle .line2 {
+    opacity: 0;
   }
-  
-  .social-media a {
-    display: inline-block;
-    margin-right: 10px;
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
-  
-  .social-media img {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
+
+  /* Menu Backdrop */
+  .menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
   }
-  
-  @media (max-width: 1300px) {
-    .about-container {
+
+  .menu-backdrop.display {
+    display: block;
+  }
+
+  /* Prevent scrolling when menu is open */
+  .fixed-position {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+
+/* about us */
+.about {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  margin-top: 6rem;
+}
+
+.about-container {
+  background-color: #fff;
+  color: #cd1002;
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+.about-image {
+ /* Allow the image to grow and take up available space */
+  margin-top: 4rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Keep the max-width of the image */
+  border-radius: 10px;
+}
+
+.about-content {
+ /* Set equal flex to content */
+  margin-top: 4rem;
+  max-width: 500px; /* Keep the same max-width for content as the image */
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  background-color: #ED1C24;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.learn-more-btn:hover {
+  background-color: #c4161e;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+@media (max-width: 1300px) {
+  .about-container {
       margin: 0;
       padding: 0;
-  
-    }
-  
-    .about-image {
-      margin-left: 8rem;
-    }
-  
-    .about-content {
+  }
+
+  .about-image {
+      padding-left: 8rem;
+      max-width: 400px;
+  }
+
+  .about-content {
       margin-top: 4rem;
       margin-right: 4rem;
-    }
-  
   }
-  
-  
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+      flex-direction: column; /* Stack content and image vertically on smaller screens */
       align-items: center;
       margin: 0;
-  
       padding: 0;
       gap: 10px;
-  
-    }
-  
-    .about-image {
+  }
+
+  .about-image {
       margin-bottom: 20px;
       margin: 0;
       padding: 10px;
-    }
-  
-    .about-content {
+      max-width: 100%; /* Ensure image does not exceed container width */
+  }
+
+  .about-content {
       margin: 0;
       padding: 10px;
       text-align: center;
-  
-    }
-  
-    .social-media {
+      max-width: 100%; /* Ensure content fits within container */
+  }
+
+  .social-media {
       margin-top: 15px;
-    }
-  
-    .social-media a {
+  }
+
+  .social-media a {
       margin-right: 5px;
-    }
-  
-    .social-media img {
+  }
+
+  .social-media img {
       width: 25px;
       height: 25px;
-    }
   }
-  
-  
-  @media (max-width: 400px) {
-    .about-content {
+}
+
+@media (max-width: 400px) {
+  .about-content {
       flex-direction: column;
       align-items: center;
       margin: 0;
@@ -151,250 +298,390 @@ body {
       padding: 10px;
       padding-bottom: 20px;
       gap: 10px;
-  
-    }
-  
-    .about-content p {
-      font-size: 0.8rem;
-    }
-  
   }
 
+  .about-content p {
+      font-size: 0.8rem;
+  }
+}
 
-
-
-
-
-
-
-  .motive-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #cd1002;
-    padding: 30px;
-    margin-bottom: 20px;
-    flex-wrap: nowrap; /* Ensures content and image remain side-by-side */
+.motive-section {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap; /* Keep items in a single line */
+  justify-content: space-between; /* Space between content and image */
+  background-color: #cd1002;
 }
 
 .motive-content {
-    margin: 0 7rem;
-    max-width: 40%;
+  flex: 1 1 50%; /* Content takes up 50% of the width */
+  margin-right: 20px; /* Margin to the right for spacing */
 }
 
 .motive-content h2 {
-    color: #ffffff;
-    font-size: 1rem;
-    margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .motive-content h1 {
-    color: #ffffff;
-    font-size: 3rem;
-    margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 15px;
 }
 
 .motive-content h3 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .motive-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ffffff;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
 }
 
 .motive-image {
-    max-width: 40%;
-    margin-right: 8rem;
+  flex: 1 1 50%; /* Image takes up 50% of the width */
 }
 
 .motive-image img {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
 
-/* Responsive Design for Tablets and iPads */
+/* Responsive Design for Tablets */
 @media screen and (max-width: 1024px) {
-    .motive-section {
-        flex-wrap: wrap; /* Stacks elements on smaller screens */
-        padding: 20px;
-        justify-content: center; /* Centers content on smaller screens */
-    }
+  .motive-section {
+      padding: 20px;
+  }
 
-    .motive-content {
-        max-width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-
-    .motive-image {
-        max-width: 80%;
-        margin: 20px auto 0;
-    }
+  .motive-content {
+      margin-right: 10px; /* Adjust right margin for tablets */
+  }
 }
 
 /* Responsive Design for Mobile Devices */
+@media screen and (max-width: 750px) {
+  .motive-section {
+      flex-direction: column; /* Stack elements vertically */
+  }
+
+  .motive-content,
+  .motive-image {
+      flex: 1 1 100%; /* Full width for both */
+      margin: 10px 0; /* Adds vertical spacing */
+      text-align: center; /* Centers text in content */
+  }
+}
+
+/* Further Responsive Adjustments for smaller screens */
 @media screen and (max-width: 768px) {
-    .motive-content h1 {
-        font-size: 2rem;
-    }
+  .motive-content h1 {
+      font-size: 2rem;
+  }
 
-    .motive-content h3 {
-        font-size: 1.2rem;
-    }
+  .motive-content h3 {
+      font-size: 1.2rem;
+  }
 
-    .motive-content p {
-        font-size: 16px;
-    }
+  .motive-content p {
+      font-size: 16px;
+  }
 
-    .motive-image {
-        max-width: 90%;
-        margin: 20px auto;
-    }
+  .motive-image {
+      margin: 20px auto; /* Centers image */
+  }
 
-    .motive-section {
-        padding: 10px;
-    }
+  .motive-section {
+      padding: 10px;
+  }
 }
 
 
 
 
 
-  
-/* Base styling for larger screens */
+.team {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+}
+
 .team-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
-    gap: 20px;
-    padding: 20px;
-    margin: auto;
-    background-color: #fff;
-
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap */
+  justify-content: space-between; /* Space between cards */
+  
 }
-
-
 
 .team-member {
-    background-color: #b40808;
-    color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    /* Margin on both sides */
+  background-color: #b40808;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  flex: 1 1 calc(33% - 20px); /* Three cards per row, accounting for gaps */
+  margin: 10px; /* Margin around each card */
+  transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.team h1 {
+  font-size: 2.5em; /* Adjust as needed */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 10px; /* Space below the heading */
+  color: #b40808; /* Change to your desired color */
+}
+
+.team h3 {
+  font-size: 1.5em; /* Adjust as needed */
+  text-align: center; /* Center align the subheading */
+  margin-bottom: 20px; /* Space below the subheading */
+  color: #555; /* Change to your desired color */
+}
+
+
+.team-member:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .member-photo {
-    position: relative;
+  position: relative;
 }
 
 .member-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
 }
 
 .social-icons {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background-color: #cd0505;
-    border-radius: 5px;
-    padding: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #cd0505;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .social-icons a {
-    display: block;
-    width: 30px;
-    height: 24px;
+  display: block;
+  width: 30px;
+  height: 24px;
 }
 
 .social-icons img {
-    width: 100%;
-    height: 100%;
-    filter: invert(1); /* Inverts color to white for better visibility on red background */
+  width: 100%;
+  height: 100%;
+  filter: invert(1); /* Inverts color to white for better visibility on red background */
 }
 
 .member-info {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .member-name {
-    font-size: 1.25em;
-    font-weight: bold;
-    margin: 10px 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .member-position {
-    font-size: 1em;
-    margin: 5px 0;
-    color: #b5b5b5;
+  font-size: 1em;
+  margin: 5px 0;
+  color: #b5b5b5;
 }
 
 .member-description {
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin: 10px 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 10px 0;
 }
 
 .portfolio-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1em;
-    color: white;
-    text-decoration: underline;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  text-decoration: underline;
 }
 
-/* Responsive design for tablets (up to 768px wide) */
+/* Responsive design for tablets */
 @media (max-width: 768px) {
-    .team-container {
-        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
-        gap: 15px; /* Adjust gap to fit better on tablets */
-    }
-
-    .team-member {
-        margin: 0 3.5rem; /* Adjust margin for tablets */
-        padding: 15px; /* Adjust padding for tablets */
-    }
-
-    .member-name {
-        font-size: 1.2em;
-    }
-
-    .member-description {
-        font-size: 0.85em;
-    }
+  .team-member {
+      flex: 1 1 calc(50% - 20px); /* Two cards per row */
+  }
 }
 
-/* Responsive design for mobile devices (up to 480px wide) */
+/* Responsive design for mobile devices */
 @media (max-width: 480px) {
-    .team-container {
-        grid-template-columns: 1fr; /* One card per row */
-        gap: 10px; /* Adjust gap for mobile devices */
-    }
-
-    .team-member {
-        margin: 0 1rem; /* Adjust margin for mobile devices */
-        padding: 10px; /* Adjust padding for mobile devices */
-    }
-
-    .member-name {
-        font-size: 1.1em;
-    }
-
-    .member-description {
-        font-size: 0.8em;
-    }
-
-    .portfolio-link {
-        font-size: 0.9em;
-    }
+  .team-member {
+      flex: 1 1 100%; /* One card per row */
+  }
 }
+
+
+footer {
+  width: 100%;
+
+  bottom: 0;
+  left: 0;
+  background: #111;
+}
+
+footer .content3 {
+  max-width: 88rem;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .content3 p,
+a {
+  color: #fff;
+}
+
+footer .content3 .box {
+  width: 33%;
+  transition: all 0.4s ease;
+}
+
+footer .content3 .topic {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+footer .content3 p {
+  text-align: justify;
+}
+
+footer .content3 .lower .topic {
+  margin: 24px 0 5px 0;
+}
+
+footer .content3 .lower i {
+  padding-right: 16px;
+}
+
+footer .content3 .middle {
+  padding-left: 80px;
+}
+
+footer .content .middle a {
+  line-height: 32px;
+}
+
+footer .content3 .right input[type="text"] {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+
+footer .content3 .right input[type="submit"] {
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+
+.content3 .right input[type="submit"]:hover {
+  background: none;
+  color: #eb2f06;
+}
+
+footer .content3 .media-icons a {
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+
+.content .media-icons a:hover {
+  border-color: #eb2f06;
+}
+
+footer .bottom {
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+
+footer .bottom a {
+  color: #eb2f06;
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #eb2f06;
+}
+
+@media (max-width:1100px) {
+  footer .content3 .middle {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width:950px) {
+  footer .content3 .box {
+    width: 50%;
+  }
+
+  .content3 .right {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width:560px) {
+  footer {
+    position: relative;
+  }
+
+  footer .content3 .box {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  footer .content3 .middle {
+    padding-left: 0;
+  }
+}
+
